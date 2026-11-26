@@ -42,7 +42,8 @@ namespace MVC01.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<int>("Gender")
                         .HasColumnType("int");
@@ -228,6 +229,7 @@ namespace MVC01.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
+                        .HasColumnName("HireDate")
                         .HasDefaultValueSql("GETDATE()");
 
                     b.Property<DateOnly>("DateOfBirth")
@@ -235,13 +237,11 @@ namespace MVC01.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<int>("Gender")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("HireDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()

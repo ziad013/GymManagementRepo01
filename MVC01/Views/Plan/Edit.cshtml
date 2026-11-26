@@ -1,0 +1,47 @@
+﻿@model UpdatePlanViewModel
+<div class="page-head">
+    <div>
+        <h1 class="page-title">Edit plan</h1>
+        <p class="page-sub">Changes apply to new memberships only.</p>
+    </div>
+</div>
+
+<form asp-action="Edit" method="post" class="card-r form-card">
+    <div asp-validation-summary="ModelOnly" class="form-alert"></div>
+    <div class="form-section">
+        <div class="form-grid">
+            <div class="field full">
+                <label asp-for="PlanName"></label>
+                <input asp-for="PlanName" class="input-r" readonly />
+                <div class="field-hint">Plan names can't be changed.</div>
+            </div>
+            <div class="field">
+                <label asp-for="Price"></label>
+                <div class="input-group-r">
+                    <input asp-for="Price" type="number" step="0.01" min="0.01" class="input-r" />
+                    <span class="addon">EGP</span>
+                </div>
+                <span asp-validation-for="Price" class="field-error"></span>
+            </div>
+            <div class="field">
+                <label asp-for="DurationDays"></label>
+                <div class="input-group-r">
+                    <input asp-for="DurationDays" type="number" min="1" max="365" class="input-r" />
+                    <span class="addon">days</span>
+                </div>
+                <span asp-validation-for="DurationDays" class="field-error"></span>
+            </div>
+            <div class="field full">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" class="input-r" rows="4"></textarea>
+            </div>
+        </div>
+        <span asp-validation-for="Description" class="field-error"></span>
+    </div>
+
+    <div class="form-actions">
+        <a class="btn-r btn-ghost-r" asp-action="Index">Cancel</a>
+        <button type="submit" class="btn-r btn-primary-r"><i class="bi bi-check2"></i> Save plan</button>
+    </div>
+</form>
+

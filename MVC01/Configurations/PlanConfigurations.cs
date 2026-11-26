@@ -11,6 +11,9 @@ namespace MVC01.Configurations
 
             builder.Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
 
+            builder.Property(x => x.Price)
+                   .HasPrecision(18, 2);
+
             builder.ToTable("Plans", table =>
             {
                 table.HasCheckConstraint(

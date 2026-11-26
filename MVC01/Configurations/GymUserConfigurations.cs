@@ -17,6 +17,10 @@ namespace MVC01.Configurations
                    .HasColumnType("varchar")
                    .HasMaxLength(11);
 
+            builder.Property(x => x.Email)
+                   .HasColumnType("varchar(100)")
+                   .HasMaxLength(100);
+
             builder.HasIndex(x => x.Email).IsUnique();
             builder.HasIndex(x => x.Phone).IsUnique();
 

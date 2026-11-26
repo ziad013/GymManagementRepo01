@@ -3,7 +3,7 @@ using System.Net;
 
 namespace MVC01.Entities
 {
-    public class GymUser :BaseEntity
+    public abstract class GymUser :BaseEntity
     {
         public string Name { get; set; } = default!;
 

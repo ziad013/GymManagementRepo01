@@ -1,6 +1,6 @@
 ﻿namespace MVC01.Entities
 {
-    public class BaseEntity
+    public abstract class BaseEntity
     {
         public int Id { get; set; }
 
